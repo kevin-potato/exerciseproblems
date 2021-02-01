@@ -83,6 +83,8 @@ int main(){
 	return 0;
 }
 
+//	a way to calculate the minium roads
+
 //	for(int k=1; k<=numofcities; k++){
 //		for(i=0; i<numofcities; i++){
 //			for(j=0; j<numofcities; j++){
