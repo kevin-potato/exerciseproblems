@@ -1,0 +1,92 @@
+
+void beginPaint();	//start paint
+void endPaint();	//end paint
+
+int Setup()
+{
+initWindow("Hello World"//标题,DEFAULT//位置,DEFAULT100,200,200);	//DEFAULT产生窗口在windows觉得合适的地方
+return 0;
+} 
+
+if need to scanf or printf, need initConsole() first.
+
+画点
+void putPixel(int x, int y, ACL_Color color);
+	
+	//ACL_Color get Pixel(int x, int y)
+
+color: RGB(r,g,b)	0~255
+
+画线
+void moveTo(int x,int y)
+void moveRel(int dx,int dy)
+void line(int x0,int y0,int x1,int y1)
+void lineTo(int x,int y)
+void lineRel(int dx,int dy)
+void arc(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nXStartArc, int nYStartArc, int nXEndArc, int nYEndArc)	//画弧线
+
+画笔
+void setPenColor (ACL_Color color)
+void setPenWidth(int width)
+void setPenStyle(ACL_Pen_Style style)			//宽度为1才能画特殊线型
+	PEN_STYLE_SOLID		//实线
+	PEN_STYLE_DASH		//划线
+	PEN_STYLE-DOT		//点线
+	PEN_STYLE_DASHDOT
+	PEN_STYLE_DASHDOTDOT
+	PEN_STYLE_NULL
+
+面
+void chrod(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nXRadial1, int nYRadial1, int nXRadial2, int nYRadial2)		//扇形
+void ellipse(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect)		//椭圆
+
+void pie(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nXRadial1, int nYRadial1, int nXRadial2, int nYRadial2)
+
+void rectangle(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect)		//矩形
+
+void roundrect(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidth, int nHeight)	//圆角矩形
+
+刷子		//负责面内部
+
+void setBrushColor(ACL_Color color)
+void setBrushStyle(ACL_Brush_Style style)
+	BURSH_STYLE_SOLID
+	BURSH_STYLE_HORIZONTAL
+	BURSH_STYLE_VERTICAL
+	BURSH_STYLE_FDIAGONAL
+	BURSH_STYLE_BDIAGONAL
+	BURSH_STYLE_CROSS
+	BURSH_STYLE_DIAGCROSS
+
+
+文字
+
+void setTextColor(ACL_Color color)
+void setTextBKColor(ACL_Color color)
+void setTextSize(int size)
+void setTextFont(char* pFontName)
+
+void paintText(int x, int y, const char* pStr)
+
+
+The Callbacks
+\\回调函数
+typedef void(*KeyboardEventCallback)(const char key);
+typedef void(*CharEventCallback)(int key);
+typedef void(*MouseEventCallback)(int x, int y, int button, int status);
+typedef void(*TimerEventCallback)(int timerID);
+
+二进制读写
+size_t fread(void *restrict ptr, size_t size, size_t
+nitems, FILE *restrict stream);
+• size_t fwrite(const void *restrict ptr, size_t size,
+size_t nitems, FILE *restrict stream);
+• 注意FILE指针是最后⼀一个参数
+• 返回的是成功读写的字节数
+
+
+
+
+
+
+
